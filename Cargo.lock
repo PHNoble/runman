@@ -1032,6 +1032,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "bevy_rts_camera"
+version = "0.10.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "447ceba9fe059053ce383604a09d6a073df234bf3d0ac0f8f51256fa81f07475"
+dependencies = [
+ "bevy",
+]
+
+[[package]]
 name = "bevy_scene"
 version = "0.16.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3547,6 +3556,7 @@ name = "runman"
 version = "0.1.0"
 dependencies = [
  "bevy",
+ "bevy_rts_camera",
 ]
 
 [[package]]
