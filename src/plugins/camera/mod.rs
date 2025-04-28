@@ -2,9 +2,12 @@ use bevy::prelude::*;
 use bevy_rts_camera::RtsCameraPlugin;
 use bevy_rts_camera::{RtsCamera, RtsCameraControls};
 
+pub mod lighting;
+
 pub struct CameraPlugin;
 
 pub use bevy_rts_camera::Ground as CameraGround;
+use lighting::setup_lighting;
 
 fn add_camera_system(mut commands: Commands){
     commands.spawn((
@@ -53,6 +56,6 @@ impl Plugin for CameraPlugin {
     fn build(&self, app: &mut App) {
         app
           .add_plugins(RtsCameraPlugin)
-          .add_systems(Startup, add_camera_system); 
+          .add_systems(Startup, (add_camera_system, setup_lighting));
     }
 }
